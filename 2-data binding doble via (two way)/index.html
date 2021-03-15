@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <div id="app">
+            <form action="">
+                <label for="">Entrada:</label>
+                <input type="text" name="" value="" v-model="options"><br>
+                <input type="checkbox" name="" value="opcion-1" v-model="options">Opcion 1
+                <input type="checkbox" name="" value="opcion-2" v-model="options">Opcion 2
+                <input type="checkbox" name="" value="opcion-3" v-model="options">Opcion 3
+                <p>Usted selecciono: {{ options.join(',') }}</p>
+
+            </form>
+            <br><br><br>
+            <h1>ARREGLOS</h1>
+            <ul>
+                <li v-for="(animal, i) in animales">
+
+                    El {{ animal }} hace {{ sonidos[i] }}
+                </li>
+            </ul>
+        </div>
+
+        <script type="text/javascript" src="vue.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>
