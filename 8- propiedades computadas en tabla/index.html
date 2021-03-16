@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <div id="app">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Pais</th>
+                        <th>Electricidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for='presa in presasPorElectricidad'>
+                        <td>{{ presa.nombre }}</td>
+                        <td>{{ presa.pais }}</td>
+                        <td>{{ presa.electricidad }} Megawatts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script type="text/javascript" src="vue.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

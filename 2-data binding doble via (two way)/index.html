@@ -10,11 +10,17 @@
         <div id="app">
             <form action="">
                 <label for="">Entrada:</label>
-                <input type="text" name="" value="" v-model="options"><br>
+                <!-- <input type="text" name="" value="" v-model="options"><br>
                 <input type="checkbox" name="" value="opcion-1" v-model="options">Opcion 1
                 <input type="checkbox" name="" value="opcion-2" v-model="options">Opcion 2
-                <input type="checkbox" name="" value="opcion-3" v-model="options">Opcion 3
+                <input type="checkbox" name="" value="opcion-3" v-model="options">Opcion 3 -->
                 <p>Usted selecciono: {{ options.join(',') }}</p>
+
+                <h1>Llamando al methods: {{ mostrarTitulo() }}</h1>
+
+                <input type="text" v-model="inicialContador">
+                <button @click="aumentarContador()">Sumar + 1</button>
+                <p>{{ contador }}</p>
 
             </form>
             <br><br><br>
