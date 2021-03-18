@@ -1,7 +1,7 @@
 <template>
     <!-- <img src="./assets/logo.png"> -->
     <!-- <HelloWorld/> -->
-    <div>
+    <div class="container">
     <Header/>
     <EjemploPost/>
     <Footer2/>
