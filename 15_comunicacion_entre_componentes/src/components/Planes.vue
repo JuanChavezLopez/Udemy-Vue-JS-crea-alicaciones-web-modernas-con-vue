@@ -1,6 +1,7 @@
 <template lang="">
     <div>
-        <plan v-for="pla in planes" :nombre="pla" :key="pla" @select="planSeleccionado"/>
+        <!-- cuando se ejecute en evento @eventoSelect, que llame al metodo planSeleccionado. -->
+        <plan v-for="pla in planes" :nombre="pla" :key="pla" @eventoSelect="planSeleccionado"/>
     </div>
 </template>
 
@@ -16,16 +17,17 @@ export default {
     },
     data() {
         return {
-        planes: ['Plan 1 - Principiante','Plan 2 - Intermedio','Plan 3 - Avanzado','Plan 4 - Hackers'
-        ],
-        planSelect: null
+          planes: ['Plan 1 - Principiante','Plan 2 - Intermedio','Plan 3 - Avanzado','Plan 4 - Hackers'
+          ],
+          // planes: [],
+          planSelect: null
         }
     },
     methods: {
         planSeleccionado(plan) {
             this.planSelect = plan;
         }
-    },
+    }
 }
 </script>
 

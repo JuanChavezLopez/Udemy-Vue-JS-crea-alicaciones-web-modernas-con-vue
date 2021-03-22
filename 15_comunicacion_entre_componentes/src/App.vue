@@ -34,7 +34,6 @@
         <!-- <plan/> -->
         <!-- <plan v-for="pla in planes" :nombre="pla" :key="pla"/> -->
         <planes/>
-
       </div>
     </center>
   </div>

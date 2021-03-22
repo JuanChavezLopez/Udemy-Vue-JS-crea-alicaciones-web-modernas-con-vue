@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <div>
         <div @click="seleccionar" class="plan" :class="{'plan-activo':seleccionado}">
           <div class="descripcion">
@@ -26,14 +26,16 @@ name: "Plan",
  },
  methods: {
      seleccionar() {
-         this.$emit('select', this.nombre); /* aca vemos los eventos */
-         this.seleccionado = true;
+        //!  eventoSelect: es el nombre del evento, el metodo $emit nos ayuda a hacer la propagacion de eventos.
+
+         this.$emit('eventoSelect', this.nombre); 
+         this.seleccionado = true; /* si habilitamos la clase se pinta, xq se pone en true */
      }
  },
 };
 
 </script>
 
-<style lang="">
+<style>
 
 </style>
