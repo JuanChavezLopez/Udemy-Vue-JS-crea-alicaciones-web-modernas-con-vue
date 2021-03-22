@@ -1,15 +1,21 @@
 <template>
     <div>
-        
         <ul class="list-group">
             <h1 class="text-center">LIST PRODUCTS</h1>
             <li class="list-group-item" v-for="item in items" :key="item.id">
-                
-                <div class="row">
-                    <div class="col-md-8">
+                <div class="row list-products">
+                    <div class="col-md-6">
                         {{ item.titulo }} - ${{ item.precio }}
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
+                        <img style="width:100px;" :src="item.imagen" alt="">
+
+                    </div>
+                    <div class="col-md-2">
+                        {{ unidades }}
+
+                    </div>
+                    <div class="col-md-2">
                         <button class="btn btn-danger float-right" @click="removerItem(item)">Delete</button>
                     </div>
                 </div>
@@ -19,22 +25,23 @@
             <h4 class="text-center total">Total: $ {{ total }}</h4>
 
         </div>
-        <button :hidden="items.length === 0" @click="$emit('pagar')" class="btn btn-info form-control pagar">Pay now</button>
+        <button :hidden="items.length === 0" @click="$emit('eventoPagar')" class="btn btn-info form-control pagar">Pay now</button>
+        <img style="width:710px;" src="https://www.romania-insider.com/sites/default/files/styles/article_large_image/public/2020-07/emag_store_-_photo_lenutaidi_-_dreamstime.com_.jpg" alt="">
     </div>
 </template>
 
 <script>
 export default {
     name: 'Carrito',
-    props: ['items'],
+    props: ['items', 'unidades'], /* recibimos los items que nos envian del padre */
     computed: {
         total() {
-            return this.items.reduce((acumulador, item) => acumulador + Number(item.precio), 0);
+            return this.items.reduce((acumulador, item) => acumulador + Number(item.precio)*this.unidades, 0);
         }
     },
     methods: {
         removerItem(item) {
-            this.$emit('remover-item', item);
+            this.$emit('eventoRemoverItem', item);
         }
     },
     
@@ -42,6 +49,17 @@ export default {
 </script>
 
 <style>
+
+    .boxs {
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+    }
+    .list-products {
+        display: flex;
+        /* flex-direction: column; */
+        align-items: center;
+    }
     .total {
         font-size: 40px;
         font-weight: 800;

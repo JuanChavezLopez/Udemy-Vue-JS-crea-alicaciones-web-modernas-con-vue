@@ -8,7 +8,8 @@
 
             <p class="text-center text-muted card-text display-4">${{ Number(producto.precio).toFixed() }}</p>
 
-            <button @click="agregarCarro(producto)" class="btn btn-primary form-control add" :disabled="estaEnCarrito">{{ estaEnCarrito ? 'Aggregate' : 'Add car' }}</button>
+            <!-- <button @click="agregarCarro(producto)" class="btn btn-primary form-control add" :disabled="estaEnCarrito">{{ estaEnCarrito ? 'Aggregate' : 'Add car' }}</button> -->
+            <button @click="agregarCarro(producto)" class="btn btn-primary form-control add" >Add car</button>
         </div>
     </div>
 
@@ -19,11 +20,11 @@
 
 
 export default {
-    name: 'Producto',
-    props : ['producto', 'estaEnCarrito'],
+    name: 'Producto', /* nombre del componente */
+    props : ['producto'], /* recibimos el producto y el estado de: estaEnCarrito */
     methods: {
-        agregarCarro(producto) {
-            this.$emit('agregar_carro', producto);
+        agregarCarro(producto) { /* aca le estamos enviando el objeto producto */
+            this.$emit('eventoAgregarCarro', producto);
         }
     }
 }
