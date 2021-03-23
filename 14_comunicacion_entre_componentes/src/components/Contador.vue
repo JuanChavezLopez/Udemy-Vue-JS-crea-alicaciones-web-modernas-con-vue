@@ -1,5 +1,4 @@
 <template>
-
         <button @click='contar()'>{{contador}}</button>
 
 </template>
